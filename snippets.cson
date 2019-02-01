@@ -135,7 +135,7 @@
 
   'secured malloc':
     'prefix': 'malloc'
-    'body': 'if (!(${1:var}) = (${2:type}*)malloc(sizeof(${2:type})$3)))\n\treturn (NULL);'
+    'body': 'if (!(${1:var}) = (${2:type}*)malloc(sizeof(${2:type})$3))\n\treturn (NULL);'
 
 # NATIVE SNIPPETS
 
