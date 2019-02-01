@@ -133,6 +133,9 @@
     'prefix': 'proto, pf'
     'body': '${1:type}\t${2:name}(${3:void});'
 
+  'secured malloc':
+    'prefix': 'malloc'
+    'body': 'if (!(${1:var}) = (${2:type}*)malloc(sizeof(${2:type})$3)))\n\treturn (NULL);'
 
 # NATIVE SNIPPETS
 
