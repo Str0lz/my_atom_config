@@ -55,15 +55,15 @@
 
   'ft_putchar':
     'prefix': 'putc'
-    'body': 'ft_putchar($1);'
+    'body': 'ft_putchar(${1:__});'
 
   'ft_putstr':
     'prefix': 'puts'
-    'body': 'ft_putstr($1);'
+    'body': 'ft_putstr(${1:__});'
 
   'ft_strlen':
     'prefix': 'strl'
-    'body': 'ft_strlen($1);'
+    'body': 'ft_strlen(${1:__});'
 
   'main()':
     'prefix': 'main, mc'
@@ -71,35 +71,35 @@
 
   '#ifndef … #define … #endif':
     'prefix': 'def'
-    'body': '#ifndef ${1:SYMBOL}\n# define $1 ${2:value}\n#endif'
+    'body': '#ifndef ${1:__}\n# define $1 ${2:__}\n#endif'
 
   '#include <>':
     'prefix': 'Inc'
-    'body': '#include <${1:.h}>'
+    'body': '#include <${1:__}.h>'
 
   '#include ""':
     'prefix': 'inc'
-    'body': '#include "${1:.h}"'
+    'body': '#include "${1:__}.h"'
 
   'If Condition':
     'prefix': 'if'
-    'body': 'if ($1)\n\t$2;\n'
+    'body': 'if (${1:__})\n\t${2:__};\n'
 
   'Else If Condition':
     'prefix': 'elif, efi'
-    'body': 'else if ($1)\n\t$2;\n'
+    'body': 'else if (${1:__})\n\t${2:__};\n'
 
   'If Else':
     'prefix': 'ife'
-    'body': 'if ($1)\n\t$2;\nelse\n\t$3;\n'
+    'body': 'if (${1:__})\n\t${2:__};\nelse\n\t${3:__};\n'
 
   'If ElseIf':
     'prefix': 'iff'
-    'body': 'if ($1)\n\t$2;\nelse if ($2)\n\t$3;\n'
+    'body': 'if (${1:__})\n\t${2:__};\nelse if (${3:__})\n\t${4:__};\n'
 
   'If ElseIf Else':
     'prefix': 'iffe'
-    'body': 'if ($1)\n\t$2;\nelse if ($2)\n\t$3;\nelse\n\t$3;\n'
+    'body': 'if (${1:__})\n\t${2:__};\nelse if (${3:__})\n\t${4:__};\nelse\n\t${5:__};\n'
 
   'Ternary Condition':
     'prefix': 't?, ter'
@@ -107,11 +107,11 @@
 
   'printf':
     'prefix': 'printf'
-    'body': 'printf("%${1:s}\\\\n", $2);$3'
+    'body': 'printf("%${1:s}\\\\n", ${2:__});$3'
 
   'Struct':
     'prefix': 'struct'
-    'body': 'struct s_${1:name}\n{\n\t$2\n};'
+    'body': 'struct s_${1:name}\n{\n\t${2:__}\n};'
 
   'any function (UNSTABLE)':
     'prefix': 'func, ff'
